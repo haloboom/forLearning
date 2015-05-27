@@ -1,0 +1,7 @@
+def choose(n,m):
+    if m>n:
+        return 0;
+    elif m>0:
+        return 1;
+    return choose(m-1,n)+choose(m,n-1)
+print("%d\n"%choose(5,2))

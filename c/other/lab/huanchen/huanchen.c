@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+typedef struct{
+char jcz[3][32];
+int price;
+}Netpoint;
+int f(char **arr,int i,int j)//get jcz price
+{
+  FILE *fp=fopen("stations.txt","r");
+  int n=0;
+  if(fp==NULL)
+  {
+    printf("shit!\n");
+    exit(-1);
+  }
+  while(!feof(fp))
+  {
+    fscanf(fp,"%s",arr+j*n+j);
+    n++;
+  }
+  return 0;
+}
+int main()
+{
+  char arr[50][20];
+  f(arr,50,20);
+  printf("%s\n",arr);
+  int i;
+  return 0;
+}

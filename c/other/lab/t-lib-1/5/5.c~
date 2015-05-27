@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+  long a,b,c;
+  int cnt=0;
+  scanf("%ld",&c);
+  a=b=c-1;
+  for(a=c-1;a>=3;a-=3)
+    for(b=c-1;a+b>c;b-=4)
+    {
+      if((a*a + b*b) == c*c)
+        cnt++;
+    }
+  printf("%d\n",cnt);
+  return 0;
+}

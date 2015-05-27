@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<string.h>
+void f(char *arr)
+{
+  int cntSpace=0,cntAlp=0,cntNum=0,i,n=strlen(arr);
+  for(i=0;i<n;i++)
+  {
+    if(arr[i]!=' ' && arr[i]!='\n'&& arr[i]!=EOF)
+    {
+      cntSpace=0;
+      if(arr[i]>='0'&&arr[i]<='9')
+      {
+        cntNum++;
+        if(cntNum>=1)
+        {
+          char forward,last;
+          forward=(arr[i-1]>='a'&& arr[i-1]<='z')?'_':'\0';
+          last=(arr[i+1]>='a'&& arr[i+1]<='z')?'_':'\0';
+          printf("%c%c%c",forward,arr[i],last);
+        }
+      }
+      else
+      {
+        cntAlp++;
+        if(cntAlp==1)
+          printf("%c",arr[i]-'a'+'A');
+        else if(cntAlp>1)
+          printf("%c",arr[i]);
+      }
+    }
+    else
+    {
+      cntAlp=cntNum=0;
+      cntSpace++;
+      char space=(cntSpace<=1)?' ':'\0';
+      printf("%c",space);
+    }
+  }
+  printf("\n");
+}
+int main()
+{
+  f("1a2b3c this lalax3");
+  f("hello     world    1to2day3");
+  return 1;
+}

@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+  printf("std PI:%12.11lf\n",M_PI);
+  double a=1;
+  int n=6;
+  int i;
+  for(i=0;i<10;i++)
+  {
+    double b=sqrt(1-(a/2)*(a/2));
+    a=sqrt((1-b)*(1-b)+(a/2)*(a/2));
+    n=2*n;
+    printf("n=%d,pi=%12.11lf\n",n,1.0*n*a/2);
+  }
+  return 0;
+}

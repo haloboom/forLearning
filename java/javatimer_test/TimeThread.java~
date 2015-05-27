@@ -1,0 +1,25 @@
+//启动线程方法:
+//继承Thread
+//引用Runnable接口
+public class TimeThread extends Thread{
+  int time=0;
+  boolean flag=true;
+
+  public void run(){//线程体
+    super.run();
+    try{
+      while(flag){
+      this.currentThread().sleep(1000);
+      time++;
+      System.out.println(time+"\n");
+      }
+    }catch(InterruptedException e){
+        e.printStackTrace();
+    }
+  }
+  public  static int main(String args[]){
+    TimeThread thread = new TimeThread();
+    thread.start();
+    return 0;
+  }
+};
