@@ -42,19 +42,11 @@ public class Rx extends Thread{
 			try {
 				connect = server.accept();
 				this.currentThread().sleep(600);
-				//defaultChannel.open();
-				/*defaultChannel.connect(connect.getRemoteSocketAddress());*/
-				ByteBuffer buffer =ByteBuffer.allocate(1024);
-				defaultChannel = connect.getChannel();
-				if(buffer.hasArray()){
-				defaultChannel.read(buffer);
-				byte[] bytes = new byte[1024];
-				buffer.get(bytes);
-				System.out.println(bytes.toString());
-				}
-				defaultChannel.close();
+				String Msg = connect.getInputStream().toString();
+				System.out.println(Msg);
+				if(connect.isConnected()){
 				connect.close();
-				server.close();
+				}
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -72,9 +64,7 @@ public class Rx extends Thread{
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Rx recieve = new Rx();
-		String getCMD = null ;
 		recieve.flag = true;
-		BufferedReader command = new BufferedReader(new InputStreamReader(System.in));
 		recieve.start();
 	}
 

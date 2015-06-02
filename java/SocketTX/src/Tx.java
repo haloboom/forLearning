@@ -29,7 +29,7 @@ public class Tx {
 			sender.channel = SocketChannel.open();
 			sender.channel.connect(sender.connect.getRemoteSocketAddress());
 			ByteBuffer sendMsg = ByteBuffer.allocate(1024);
-			byte[] bytes = new String("hello Server").getBytes();//new BufferedReader(new InputStreamReader(System.in)).readLine().getBytes();
+			byte[] bytes = new String("hello Server").getBytes("utf-8");//new BufferedReader(new InputStreamReader(System.in)).readLine().getBytes();
 			sendMsg.put(bytes);
 			sender.channel.write(sendMsg);
 		} catch (IOException e) {
