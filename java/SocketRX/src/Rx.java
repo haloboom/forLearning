@@ -30,6 +30,7 @@ public class Rx extends Thread{
 	public void run() {
 		// TODO Auto-generated method stub
 		super.run();
+		BufferedReader br=null;
 		System.out.println("Server is Running:");
 		try {
 			server =new ServerSocket(23333);
@@ -42,7 +43,8 @@ public class Rx extends Thread{
 			try {
 				connect = server.accept();
 				this.currentThread().sleep(600);
-				String Msg = connect.getInputStream().toString();
+				br = new BufferedReader(new InputStreamReader(connect.getInputStream()));
+				String Msg = br.readLine();
 				System.out.println(Msg);
 				if(connect.isConnected()){
 				connect.close();
@@ -55,7 +57,6 @@ public class Rx extends Thread{
 				e.printStackTrace();
 			} catch (NullPointerException e) {
 				//TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		System.exit(-1);		

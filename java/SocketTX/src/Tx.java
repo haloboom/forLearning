@@ -5,6 +5,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 /**
  * @author TianChen
  *
@@ -26,12 +27,15 @@ public class Tx {
 		Tx sender = new Tx();
 		try {
 			sender.connect = new Socket("192.168.1.100",23333);
-			sender.channel = SocketChannel.open();
+			/*sender.channel = SocketChannel.open();
 			sender.channel.connect(sender.connect.getRemoteSocketAddress());
 			ByteBuffer sendMsg = ByteBuffer.allocate(1024);
 			byte[] bytes = new String("hello Server").getBytes("utf-8");//new BufferedReader(new InputStreamReader(System.in)).readLine().getBytes();
 			sendMsg.put(bytes);
-			sender.channel.write(sendMsg);
+			sender.channel.write(sendMsg);*/
+			OutputStream os = sender.connect.getOutputStream();
+			os.write(new String("hello server!").getBytes("utf-8"));
+			os.flush();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -44,7 +48,7 @@ public class Tx {
 			System.out.println("Connected Faild");
 		}
 		try {
-			sender.channel.close();
+			//sender.channel.close();
 			sender.connect.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
