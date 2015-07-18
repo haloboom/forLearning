@@ -6,11 +6,11 @@
     position: relative; }
   .page .content {
     position: absolute;
-    bottom: 10px;
-    float: left; }
+    bottom: -100px; }
     .page .content .change-image {
       width: 30%;
-      height: 30%; }
+      height: 30%;
+      float: right; }
     .page .content .change-text {
       text-align: center;
       font-family: Impact;

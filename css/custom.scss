@@ -9,20 +9,21 @@
 
 	.content{
 		position: absolute;
-		bottom: 10px;
-		float: left;
-		
+		bottom: -100px;
+
+
 		.change-image{
 			width: 30%;
-			height: 30%;	
+			height: 30%;
+			float: right;	
 		}
 
 		.change-text{
 		text-align: center;
 		font-family: Impact;
 		color: violet;
-
-	}
+	
+		}
 	}
 	
 
