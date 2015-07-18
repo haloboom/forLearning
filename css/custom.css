@@ -1,0 +1,19 @@
+.page {
+  margin: auto 15px; }
+  .page .head {
+    margin-bottom: 30px;
+    padding: 10px;
+    position: relative; }
+  .page .content {
+    position: absolute;
+    bottom: 10px;
+    float: left; }
+    .page .content .change-image {
+      width: 30%;
+      height: 30%; }
+    .page .content .change-text {
+      text-align: center;
+      font-family: Impact;
+      color: violet; }
+
+/*# sourceMappingURL=custom.css.map */

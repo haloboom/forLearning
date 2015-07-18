@@ -1,0 +1,29 @@
+.page{
+	margin:auto 15px;
+	
+	.head{
+		margin-bottom: 30px;
+		padding: 10px;
+		position: relative;
+	}
+
+	.content{
+		position: absolute;
+		bottom: 10px;
+		float: left;
+		
+		.change-image{
+			width: 30%;
+			height: 30%;	
+		}
+
+		.change-text{
+		text-align: center;
+		font-family: Impact;
+		color: violet;
+
+	}
+	}
+	
+
+}
