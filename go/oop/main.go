@@ -10,6 +10,7 @@ type Hello interface {
 //Implement of Hello interface
 type Implement struct {
 	myWords string
+	Hello
 }
 
 //implement of Hello interface method
@@ -17,13 +18,7 @@ func (implement Implement) hello() {
 	fmt.Println("Hello " + implement.myWords + "\n")
 }
 
-//Protol type of Hello
-type Protol struct {
-	helloImplement Hello
-}
-
 func main() {
-	i := Implement{"Golang!"}
-	obj := Protol{i}
-	obj.helloImplement.hello()
+	i := Implement{myWords: "Golang!"}
+	i.hello()
 }
